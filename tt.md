@@ -2,11 +2,11 @@
 
 ###`Introduction :`
 
-Packages JITSI à installer  (uniquement ceux -la)
-jitsi-videobridge
-jicofo
-jitsi-meet-prosody
-jitsi-meet
+Packages JITSI à installer  (uniquement ceux -la)<br/>
+jitsi-videobridge<br/>
+jicofo<br/>
+jitsi-meet-prosody<br/>
+jitsi-meet<br/>
  
 Installation : (ordre à respecter)
 
