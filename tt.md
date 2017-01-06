@@ -16,44 +16,44 @@ WM os linux VM locale Ubuntu 16.10
 
 ###`Java :`
 
-openjdk version "1.8.0_102"
-sudo apt-get install openjdk-8-jdk
-sudo apt-get install openjdk-8-jre-headless
+openjdk version "1.8.0_102"<br/>
+sudo apt-get install openjdk-8-jdk<br/>
+sudo apt-get install openjdk-8-jre-headless<br/>
 
 ###`php :`
 
-sudo apt install php7.0-cli
-sudo apt-get -y install php7.0-fpm
-modifier le fichier /etc/php/7.0/fpm/php.ini
-cgi.fix_pathinfo=0   (enlever le commentaire « ; » et le mettre à 0)
-puis redémarrer:
-sudo systemctl restart php7.0-fpm
-curl: sudo apt-get install php-curl
+sudo apt install php7.0-cli<br/>
+sudo apt-get -y install php7.0-fpm<br/>
+modifier le fichier /etc/php/7.0/fpm/php.ini<br/>
+cgi.fix_pathinfo=0   (enlever le commentaire « ; » et le mettre à 0)<br/>
+puis redémarrer:<br/>
+sudo systemctl restart php7.0-fpm<br/>
+curl: sudo apt-get install php-curl<br/>
 
 ###`NGINX :`
 
 1) Installer  nginx
-sudo apt-get install nginx
-Lanceur dans /etc/init.d/nginx.
-Binaire dans /usr/sbin/nginx.
-Pid dans /run/nginx.pid.
-Defaults dans /etc/default/nginx.
-Configuration dans /etc/nginx/.
-Logs dans /var/log/nginx/.
+sudo apt-get install nginx<br/>
+Lanceur dans /etc/init.d/nginx.<br/>
+Binaire dans /usr/sbin/nginx.<br/>
+Pid dans /run/nginx.pid.<br/>
+Defaults dans /etc/default/nginx.<br/>
+Configuration dans /etc/nginx/.<br/>
+Logs dans /var/log/nginx/.<br/>
 
 2 ) Génération d'un certificat SSL (avec  l’outil Cerbot)
-cd /usr/local/sbin
-sudo wget https://dl.eff.org/certbot-auto
-sudo chmod a+x /usr/local/sbin/certbot-auto
-sudo ./certbot-auto certonly -a webroot --webroot-path=/usr/share/jitsi/jitsi-meet/ -d vtr-preprod.spoc.pro
-puis ajouter dans le fichier /etc/nginx/sites-available/vtr-preprod.spoc.pro.conf :
-     ssl_certificate /etc/letsencrypt/live/vtr-preprod.spoc.pro/cert.pem;
-     ssl_certificate_key /etc/letsencrypt/live/vtr-preprod.spoc.pro/privkey.pem;
+cd /usr/local/sbin<br/>
+sudo wget https://dl.eff.org/certbot-auto<br/>
+sudo chmod a+x /usr/local/sbin/certbot-auto<br/>
+sudo ./certbot-auto certonly -a webroot --webroot-path=/usr/share/jitsi/jitsi-meet/ -d vtr-preprod.spoc.pro<br/>
+puis ajouter dans le fichier /etc/nginx/sites-available/vtr-preprod.spoc.pro.conf :<br/>
+     ssl_certificate /etc/letsencrypt/live/vtr-preprod.spoc.pro/cert.pem; <br/>
+     ssl_certificate_key /etc/letsencrypt/live/vtr-preprod.spoc.pro/privkey.pem; <br/>
 
-enfin ajouter dans le cron :
-sudo crontab -e
-30 2 * * 1 /usr/local/sbin/certbot-auto renew >> /var/log/le-renew.log
-35 2 * * 1 /etc/init.d/nginx reload
+enfin ajouter dans le cron : <br/>
+sudo crontab -e <br/>
+30 2 * * 1 /usr/local/sbin/certbot-auto renew >> /var/log/le-renew.log <br/>
+35 2 * * 1 /etc/init.d/nginx reload <br/>
   
 3) Configurer nginx
 /etc/nginx/sites-available : vtr-preprod.spoc.pro.conf
@@ -62,16 +62,16 @@ sudo crontab -e
 sudo ln -s /etc/nginx/sites-available/vtr-preprod.spoc.pro.conf  /etc/nginx/sites-enabled/ 
  
 5) redemarrer nginx
-sudo service nginx restart
-sudo service nginx  status : vérification ok
+sudo service nginx restart<br/>
+sudo service nginx  status : vérification ok <br/>
 
 ###`PROSODY :`
  
 1) Installer prosody : : Prosody trunk nightly build 718 (2016-10-18, 5022e6181193)
  
-http://packages.prosody.im/debian/pool/main/p/prosody-trunk/prosody-trunk_1nightly718-1~yakkety_amd64.deb
-sudo dpkg -i prosody-trunk_1nightly718-1~yakkety_amd64.deb
-sudo apt-get install -f
+http://packages.prosody.im/debian/pool/main/p/prosody-trunk/prosody-trunk_1nightly718-1~yakkety_amd64.deb<br/>
+sudo dpkg -i prosody-trunk_1nightly718-1~yakkety_amd64.deb <br/>
+sudo apt-get install -f <br/>
  
 2) Configurer prosody
  
