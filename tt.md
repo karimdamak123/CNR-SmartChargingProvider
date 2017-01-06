@@ -10,17 +10,17 @@ jitsi-meet
  
 Installation : (ordre à respecter)
 
-+ `OS :`
+###`OS :`
 
 WM os linux VM locale Ubuntu 16.10
 
-+ `Java :`
+###`Java :`
 
 openjdk version "1.8.0_102"
 sudo apt-get install openjdk-8-jdk
 sudo apt-get install openjdk-8-jre-headless
 
-+ `php :`
+###`php :`
 
 sudo apt install php7.0-cli
 sudo apt-get -y install php7.0-fpm
@@ -30,7 +30,7 @@ puis redémarrer:
 sudo systemctl restart php7.0-fpm
 curl: sudo apt-get install php-curl
 
-+ `NGINX :`
+###`NGINX :`
 
 1) Installer  nginx
 sudo apt-get install nginx
@@ -42,7 +42,6 @@ Configuration dans /etc/nginx/.
 Logs dans /var/log/nginx/.
 
 2 ) Génération d'un certificat SSL (avec  l’outil Cerbot)
- 
 cd /usr/local/sbin
 sudo wget https://dl.eff.org/certbot-auto
 sudo chmod a+x /usr/local/sbin/certbot-auto
@@ -55,23 +54,18 @@ enfin ajouter dans le cron :
 sudo crontab -e
 30 2 * * 1 /usr/local/sbin/certbot-auto renew >> /var/log/le-renew.log
 35 2 * * 1 /etc/init.d/nginx reload
- 
- 
- 
+  
 3) Configurer nginx
 /etc/nginx/sites-available : vtr-preprod.spoc.pro.conf
  
 4) Activer la configuration
 sudo ln -s /etc/nginx/sites-available/vtr-preprod.spoc.pro.conf  /etc/nginx/sites-enabled/ 
  
- 
- 
 5) redemarrer nginx
 sudo service nginx restart
 sudo service nginx  status : vérification ok
 
-+ `PROSODY :`
-
+###`PROSODY :`
  
 1) Installer prosody : : Prosody trunk nightly build 718 (2016-10-18, 5022e6181193)
  
@@ -133,7 +127,7 @@ telnet localhost 5582
 server:version() : vérification version prosody en cours
 user:list("auth.vtr-preprod.spoc.pro")
 
-+ `JITSI VIDEOBRIDGE :`
+###`JITSI VIDEOBRIDGE :`
  
 1 ) A partir des .deb fournit dans le zip Installer
 sudo apt-get install default-jre-headless
@@ -146,7 +140,7 @@ dpkg -i jitsi-videobridge_829-1_amd64.deb
 3) redemarrer le service et vérifier pas de pb dans les logs
 sudo service jitsi-videobridge restart
  
- + `JICOFO :`
+ ###`JICOFO :`
  
  1 ) A partir des .deb fournit dans le zip Installer jicofo
  
@@ -159,11 +153,11 @@ dpkg -i jicofo_1.0-299-1_amd64.deb
  
 sudo service jicofo restart
 
- + `JITSI-MEET -PROSODY :`
+###`JITSI-MEET -PROSODY :`
  
  dpkg -i jitsi-meet-prosody_1.0.1378-1_all.deb
  
- + `JITSI-MEET :`
+###`JITSI-MEET :`
   
   Recopier le source fourni dans le zip livré  (répertoire jitsi-meet) sous
 le répertoir indiqué par la configuration nginx
@@ -176,7 +170,7 @@ installation npm , grunt  requise :
  
 sudo apt-get install npm nodejs-legacy
 
-  + `ScreenSharing :`
+###`ScreenSharing :`
   
 Extension Google chrome crée à partir de jidesha-master
 L'extension actuellemnt publiée doit être mise à jour , son utilisation impliquera une modification du fichier de configuration config.js avec l'id correspondant
