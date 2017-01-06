@@ -163,7 +163,7 @@ sudo service jicofo restart
  
  dpkg -i jitsi-meet-prosody_1.0.1378-1_all.deb
  
-  + `JITSI-MEET :`
+ + `JITSI-MEET :`
   
   Recopier le source fourni dans le zip livré  (répertoire jitsi-meet) sous
 le répertoir indiqué par la configuration nginx
