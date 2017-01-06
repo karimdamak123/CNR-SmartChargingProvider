@@ -174,7 +174,7 @@ sudo apt-get install npm nodejs-legacy
   
 Extension Google chrome crée à partir de jidesha-master
 L'extension actuellemnt publiée doit être mise à jour , son utilisation impliquera une modification du fichier de configuration config.js avec l'id correspondant<br/>
-En attendant la version instance actuelle se base sur la version non empaquetée incluse dans le zip ci-joint :
+En attendant la version instance actuelle se base sur la version non empaquetée incluse dans le zip (chrome_jidesha.zip) :
 -> google Chrome ->plus d outils -> extension -> mode developpeur -> charger l'extension non empaquetée -> pointer sur le répertoire chrome du zip extracté.<br/>
 A noter : les deux extensions chrome sont quasiment identiques et autorisent le screensharing pour les 2 sites  vtr-preprod.spoc.pro et vtr.spoc.pro<br/>
 par contre , l'installation automatique d 'unee xtension en peut se faire qu 'à partir d 'un site certifié par google et  un seul . Cela explique qu 'il y a duplication de l'extension pour la publication sur le chrome web store
