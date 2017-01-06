@@ -75,76 +75,76 @@ sudo apt-get install -f <br/>
  
 2) Configurer prosody
  
-/etc/prosody/prosody.cfg.lua : prosody.cfg.lua
+/etc/prosody/prosody.cfg.lua : prosody.cfg.lua<br/>
  
-/etc/prosody/conf.avail :
-Création du répertoire si non nexistant : sudo mkdir conf.avail
+/etc/prosody/conf.avail :<br/>
+Création du répertoire si non nexistant : sudo mkdir conf.avail<br/>
  
-/etc/prosody/conf.avail/ vtr-preprod.spoc.pro.cfg.lua
+/etc/prosody/conf.avail/ vtr-preprod.spoc.pro.cfg.lua<br/>
  
 3) Activer la configuration prosody
  
-sudo ln -s /etc/prosody/conf.avail/vtr-preprod.spoc.pro.cfg.lua  /etc/prosody/conf.d/
+sudo ln -s /etc/prosody/conf.avail/vtr-preprod.spoc.pro.cfg.lua  /etc/prosody/conf.d/<br/>
  
  
 4) Génération Certificat
  
-sudo apt install luarocks
-sudo apt install lua5.1 liblua5.1-dev libidn11-dev libssl-dev
-luarocks install luasec
+sudo apt install luarocks<br/>
+sudo apt install lua5.1 liblua5.1-dev libidn11-dev libssl-dev<br/>
+luarocks install luasec<br/>
  
-sudo prosodyctl cert generate vtr-preprod.spoc
+sudo prosodyctl cert generate vtr-preprod.spoc<br/>
  
-Key Size : 2048
- Leave the field empty to use the default value or '.' to exclude the field.
-countryName (GB): FR
-localityName (The Internet): Palaiseau
-organizationName (Your Organisation): Immanens
-organizationalUnitName (XMPP Department): SpocPro
-commonName (jitsi.immanens.local): 
-emailAddress (xmpp@jitsi.immanens.local): 
+Key Size : 2048<br/>
+ Leave the field empty to use the default value or '.' to exclude the field.<br/>
+countryName (GB): FR<br/>
+localityName (The Internet): Palaiseau<br/>
+organizationName (Your Organisation): Immanens<br/>
+organizationalUnitName (XMPP Department): SpocPro<br/>
+commonName (jitsi.immanens.local): <br/>
+emailAddress (xmpp@jitsi.immanens.local): <br/>
  
  
-ssl = {
-        certificate = "/var/lib/prosody/vtr-preprod.spoc.pro.crt";
-        key = "/var/lib/prosody/vtr-preprod.spoc.pro.key";
+ssl = {<br/>
+        certificate = "/var/lib/prosody/vtr-preprod.spoc.pro.crt";<br/>
+        key = "/var/lib/prosody/vtr-preprod.spoc.pro.key";<br/>
  }
  
  
 5) Génération de l'utilisateur 'focus'
  
-sudo prosodyctl register focus auth.vtr-preprod.spoc.pro <secret>
+sudo prosodyctl register focus auth.vtr-preprod.spoc.pro <secret><br/>
   
  
 6) Redemarrage du service
  
-sudo prosodyctl restart
+sudo prosodyctl restart<br/>
  
 7) Vérification service opérationnel :
  
-telnet localhost 5582
+telnet localhost 5582<br/>
  
-server:version() : vérification version prosody en cours
-user:list("auth.vtr-preprod.spoc.pro")
+server:version() : vérification version prosody en cours<br/>
+user:list("auth.vtr-preprod.spoc.pro")<br/>
 
 ###`JITSI VIDEOBRIDGE :`
  
 1 ) A partir des .deb fournit dans le zip Installer
-sudo apt-get install default-jre-headless
-dpkg -i jitsi-videobridge_829-1_amd64.deb
+sudo apt-get install default-jre-headless<br/>
+dpkg -i jitsi-videobridge_829-1_amd64.deb<br/>
  
 2) Configurer Videobridge
  
-/etc/jitsi/videobridge/config : config
+/etc/jitsi/videobridge/config : config<br/>
  
 3) redemarrer le service et vérifier pas de pb dans les logs
-sudo service jitsi-videobridge restart
+sudo service jitsi-videobridge restart<br/>
  
 ###`JICOFO :`
  
  1 ) A partir des .deb fournit dans le zip Installer jicofo
  
-dpkg -i jicofo_1.0-299-1_amd64.deb
+dpkg -i jicofo_1.0-299-1_amd64.deb<br/>
  
 2) Configurer jicofo :
 /etc/jitsi/jicofo/config : config
@@ -166,7 +166,7 @@ le répertoir indiqué par la configuration nginx
 ne pas oublier de recopier et mettre à jour le fichier config.js en fonction du domaine  vtr-preprod.spoc.pro
  
 Ensuite si des modifications de sources sont nécessiares , suivre la procédure indiquée dans mon précédent email :
-installation npm , grunt  requise :
+installation npm , grunt  requise :<br/>
  
 sudo apt-get install npm nodejs-legacy
 
