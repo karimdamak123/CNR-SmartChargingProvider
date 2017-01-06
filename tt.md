@@ -140,7 +140,7 @@ dpkg -i jitsi-videobridge_829-1_amd64.deb
 3) redemarrer le service et vérifier pas de pb dans les logs
 sudo service jitsi-videobridge restart
  
- ###`JICOFO :`
+###`JICOFO :`
  
  1 ) A partir des .deb fournit dans le zip Installer jicofo
  
